@@ -1,42 +1,17 @@
-.messy-layout {
-  position: relative;
-  margin-left: -20px;
-  padding-right: 100px;
+.flex {
+  display: flex;
 }
-
-.messy-layout > div:first-child {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 45%;
-  z-index: 2;
-  margin-top: 20px;
+.flex-dir-col{
+  flex-direction: column;
 }
-
-.messy-layout > div:last-child {
-  position: absolute;
-  left: 10%;
-  top: 50px;
-  width: 60%;
-  z-index: 1;
-  margin-bottom: 30px;
+.justy-center{
+  justify-content: center;
 }
-
-.messy-layout::after {
-  content: "";
-  display: block;
-  height: 800px;
+.align-center{
+  align-items: center;
 }
+.instructions li{
+  list-style:inside;
+  color: white;
 
-@media (max-width: 768px) {
-  .messy-layout > div:first-child {
-    left: 70%;
-    width: 80%;
-  }
-  
-  .messy-layout > div:last-child {
-    left: 5%;
-    width: 90%;
-  }
 }
-

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import {useState} from 'react'
 import './BugHunt.css'
 
 function BugHunt() {
-  const [counter, setCounter] = useState(0)
+  //const [counter, setCounter] = useState(0)
   const [items, setItems] = useState([
     { id: 1, name: 'Item 1', price: 10, quantity: 1 },
     { id: 2, name: 'Item 2', price: 20, quantity: 2 },
@@ -12,32 +12,37 @@ function BugHunt() {
   const [username, setUsername] = useState('')
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  useEffect(() => {
-    setCounter(counter + 1)
-  }, [counter])
+  //1-This section of code had no specific purpose or function and was creating an infinite loop bug.
+  //useEffect(() => {
+  //  setCounter(counter + 1)
+  //}, [counter])
 
+//2-Putting an equal sign in this field is wrong, and since it wants the total price, the number should be multiplied by their price.
   const calculateTotal = () => {
     let total = 0
     for (let i = 0; i < items.length; i++) {
-      total += items[i].price = items[i].quantity
+      total += items[i].price * items[i].quantity
     }
     return total
   }
 
+//3-We are going to give a discount, which means the price should be reduced by the percentage we are giving, not increased. Also, the number we are giving the discount for must be converted to a percentage.
   const applyDiscount = (total) => {
-    return total + (total * discount)
+    return (total - (total * discount/100))
   }
 
+//4-It should return "true" when login is done.
   const handleLogin = () => {
     if (username.length < 3) {
       alert('Username must be at least 3 characters')
       return
     }
-    setIsLoggedIn(false)
+    setIsLoggedIn(true)
   }
 
+//5-When logging out, it should return "false".
   const handleLogout = () => {
-    setIsLoggedIn(true)
+    setIsLoggedIn(false)
     setUsername('')
   }
 
@@ -47,15 +52,16 @@ function BugHunt() {
     ))
   }
 
+//6-This function is going to retain items that are not the selected item, not the selected item.
   const removeItem = (id) => {
-    setItems(items.filter(item => item.id == id))
+    setItems(items.filter(item => item.id !== id));
   }
 
   const total = calculateTotal()
   const finalTotal = applyDiscount(total)
 
   return (
-    <div className="page-container">
+    <div>
       <h2 className="page-title">Challenge 2: Bug Hunt</h2>
       
       <div className="instructions">
@@ -77,12 +83,7 @@ function BugHunt() {
       </div>
 
       <div className="bug-hunt-content">
-        {/* Counter Section */}
-        <div className="section">
-          <h3>Counter Feature</h3>
-          <p>Counter: {counter}</p>
-          <p className="hint">⚠️ Check the browser console and watch the counter behavior</p>
-        </div>
+
 
         {/* Login Section */}
         <div className="section">

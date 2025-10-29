@@ -1,9 +1,9 @@
 .system-monitor-container {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background-color: #00010e3a;
+  padding: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e0e0e0;
+  border-bottom: 0.2rem solid #4689BF;
 }
 
 .monitor-header {
@@ -14,25 +14,25 @@
 }
 
 .monitor-header h3 {
-  color: #333;
+  color: #4689BF;
   margin: 0;
 }
 
 .monitoring-active {
-  background: #28a745;
+  background: #4689BF;
 }
 
 .monitoring-active:hover {
-  background: #218838;
+  background:  #00010e3a;
 }
 
 .monitoring-paused {
-  background: #ffc107;
-  color: #333;
+  background:#4689BF;
+  color: rgba(81, 79, 107, 0.685)
 }
 
 .monitoring-paused:hover {
-  background: #e0a800;
+  background:white;
 }
 
 .stats-grid {
@@ -43,7 +43,7 @@
 }
 
 .stat-card {
-  background: #f8f9fa;
+  background:  #000000;
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #667eea;
@@ -81,7 +81,7 @@
 }
 
 .stat-details h4 {
-  color: #555;
+  color: #fffdfd;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -90,7 +90,7 @@
 .stat-value {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 0.25rem;
 }
 
@@ -130,26 +130,37 @@
 .monitor-info {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: #fff3cd;
-  border-left: 4px solid #ffc107;
+  background: #0c0c0c;
+  border-left: 4px solid #ffffff;
   border-radius: 4px;
 }
 
 .monitor-info p {
   margin: 0;
-  color: #856404;
+  color: #667eea;
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+
+@media (min-width: 768px){
+  .system-monitor-container {
+    padding: 1.7rem;
   }
-  
   .monitor-header {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
+    font-size: 1.7rem;
+  }
+  .stats-grid{
+    gap: 2rem;
+  }
+  .stat-details h4{
+    font-size: 1.5rem;
+  }
+  .stat-percentage{
+    font-size: 1.7rem;
+  }
+  .monitor-info p{
+    font-size: 1.5rem;
   }
 }
+
 
