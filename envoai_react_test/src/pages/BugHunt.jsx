@@ -48,7 +48,7 @@ function BugHunt() {
 
   const updateQuantity = (id, newQuantity) => {
     setItems(items.map(item => 
-      item.id === id ? {...items, quantity: newQuantity } : item
+      item.id === id ? {...item, quantity: newQuantity } : item
     ))
   }
 
