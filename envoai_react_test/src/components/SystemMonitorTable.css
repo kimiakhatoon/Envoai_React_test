@@ -36,15 +36,15 @@
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5rem;
 }
 
 .stat-card {
   background:  #000000;
-  padding: 1.5rem;
+  padding: 1rem;
+  margin: 1rem;
   border-radius: 8px;
   border-left: 4px solid #667eea;
   display: flex;
@@ -146,11 +146,14 @@
   .system-monitor-container {
     padding: 1.7rem;
   }
+  .stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
   .monitor-header {
     font-size: 1.7rem;
-  }
-  .stats-grid{
-    gap: 2rem;
   }
   .stat-details h4{
     font-size: 1.5rem;

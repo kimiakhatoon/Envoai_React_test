@@ -76,7 +76,7 @@ function DataEntryTable() {
   }
 
   return (
-    <div className="data-entry-container">
+    <>
       <h3>User Data Entry Form</h3>
       <p className="subtitle">Enter 4 parameters and save to local database</p>
       
@@ -178,7 +178,7 @@ function DataEntryTable() {
           </table>
         )}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -4,7 +4,7 @@ import SystemMonitorTable from '../components/SystemMonitorTable'
 
 function LayoutChallenge() {
   return (
-    <div className='flex flex-dir-col justy-center'>
+    <>
       <h2 className="page-title">Challenge 1: Layout & Functionality Fix</h2>
       
       <div className="instructions">
@@ -19,11 +19,11 @@ function LayoutChallenge() {
         </ul>
       </div>
 
-      <div >
+
         <DataEntryTable />
         <SystemMonitorTable />
-      </div>
-    </div>
+
+    </>
   )
 }
 

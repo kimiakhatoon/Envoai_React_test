@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       
-      <body className=" flex flex-dir-col justy-center">
+      <div className="main-layout flex flex-dir-col justy-center">
         <nav className="navigation" >
        <div className='app-container flex flex-dir-col justy-center align-center'>
             <h1>Junior Frontend Developer Assessment</h1>
@@ -20,13 +20,13 @@ function App() {
           </div>
         </nav>
         
-        <main className="main-content app-container">
+        <main className="app-container flex flex-dir-col justy-center align-center">
           <Routes>
             <Route path="/" element={<LayoutChallenge />} />
             <Route path="/bug-hunt" element={<BugHunt />} />
           </Routes>
         </main>
-      </body>
+      </div>
     </Router>
   )
 }

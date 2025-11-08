@@ -48,7 +48,7 @@ function BugHunt() {
 
   const updateQuantity = (id, newQuantity) => {
     setItems(items.map(item => 
-      item.id === id ? { quantity: newQuantity } : item
+      item.id === id ? {...items, quantity: newQuantity } : item
     ))
   }
 
@@ -61,9 +61,8 @@ function BugHunt() {
   const finalTotal = applyDiscount(total)
 
   return (
-    <div>
+    <div className='flex flex-dir-col justy-center'>
       <h2 className="page-title">Challenge 2: Bug Hunt</h2>
-      
       <div className="instructions">
         <h3>Your Task:</h3>
         <ul>
